@@ -1,4 +1,5 @@
 '''
+ASKSNDLKSNDSA
 Name: Deniza Malataeva
 Date: January 29, 2015
 Description: The Mandelbrot Set fractal visual representation.
