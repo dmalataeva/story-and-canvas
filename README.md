@@ -6,11 +6,11 @@ Apologies.
 ----
 ## Mandelbrot
 '''
-###Name: 
+### Name: 
 Deniza Malataeva
-###Date: 
+### Date: 
 January 29, 2015
-###Description: 
+### Description: 
 The Mandelbrot Set fractal visual representation.
 The program draws a Mandelbrot Set fractal basing on the complex plane.
 Moreover, basing on how many iterations are made with the complex number, the fractal uses
