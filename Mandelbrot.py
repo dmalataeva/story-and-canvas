@@ -5,8 +5,7 @@ Description: The Mandelbrot Set fractal visual representation.
 The program draws a Mandelbrot Set fractal basing on the complex plane.
 Moreover, basing on how many iterations are made with the complex number, the fractal uses
 different colours to draw itself.
-Known Issues: I was not able to fully understand how the Mandelbrot Set works in terms of mathematics.
-The fractal is drawn pixel by pixel with pygame.draw.line() thus it cannot be drawn
+Known Issues: The fractal is drawn pixel by pixel with pygame.draw.line() thus it cannot be drawn
 "piece by piece" like many fractals. It cannot have a draw speed, because it would simply be useless.
 Zooming into a fractal also would not be possible in this case.
 '''
