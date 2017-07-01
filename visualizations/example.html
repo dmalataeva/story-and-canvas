@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset=utf-8>
+		<title>My first three.js app</title>
+		<style>
+			body { margin: 0; }
+			canvas { width: 100%; height: 100% }
+		</style>
+	</head>
+	<body>
+		<script src="three.js"></script>
+		<script> src =""</script>
+		<script>
+			var renderer = new THREE.WebGLRenderer();
+			renderer.setSize( window.innerWidth, window.innerHeight );
+			document.body.appendChild( renderer.domElement );
+
+			var scene = new THREE.Scene();
+			var camera = new THREE.PerspectiveCamera( 100, window.innerWidth / window.innerHeight, 0.1, 1000 );
+			var controls = new THREE.OrbitControls(camera, renderer.domElement);
+			controls.addEventListener('change', render);
+
+			var geometry = new THREE.SphereBufferGeometry(10, 10, 10);
+			var light = new THREE.AmbientLight( 0xffffff );
+			var material = new THREE.MeshLambertMaterial( { color: 0xff33cc } );
+			var planet = new THREE.Mesh( geometry, material );
+			scene.add( planet );
+			scene.add( light );
+
+			camera.position.z = 20;
+
+			function animate() {
+				//requestAnimationFrame( animate );
+
+				planet.rotation.x += 0.01;
+				planet.rotation.y += 0.01;
+
+				renderer.render( scene, camera );
+			}
+			animate();
+		</script>
+	</body>
+</html>
