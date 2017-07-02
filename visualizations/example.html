@@ -9,8 +9,8 @@
 		</style>
 	</head>
 	<body>
-		<script src="three.js"></script>
-		<script> src =""</script>
+		<script src="js/three.js"></script>
+		<script src="js/OrbitControls.js"></script>
 		<script>
 			var renderer = new THREE.WebGLRenderer();
 			renderer.setSize( window.innerWidth, window.innerHeight );
@@ -22,23 +22,30 @@
 			controls.addEventListener('change', render);
 
 			var geometry = new THREE.SphereBufferGeometry(10, 10, 10);
-			var light = new THREE.AmbientLight( 0xffffff );
+			var amblight = new THREE.AmbientLight(0xffffff, 0.1);
+			var light = new THREE.DirectionalLight(0xffcc66, 1);
 			var material = new THREE.MeshLambertMaterial( { color: 0xff33cc } );
 			var planet = new THREE.Mesh( geometry, material );
 			scene.add( planet );
+			scene.add( amblight );
 			scene.add( light );
 
 			camera.position.z = 20;
 
-			function animate() {
-				//requestAnimationFrame( animate );
 
-				planet.rotation.x += 0.01;
+			animate();
+
+			function animate() {
+				requestAnimationFrame( animate );
+
 				planet.rotation.y += 0.01;
 
-				renderer.render( scene, camera );
+				render();
 			}
-			animate();
+
+			function render() {
+				renderer.render(scene, camera);
+			}
 		</script>
 	</body>
 </html>
