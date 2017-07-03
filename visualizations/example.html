@@ -11,33 +11,48 @@
 	<body>
 		<script src="js/three.js"></script>
 		<script src="js/OrbitControls.js"></script>
+		<div id="text" style="position: absolute; color: #ffffff; margin: 45vh 50vw; font-size: 60px">Z  E  Q  I</div>
 		<script>
-			var renderer = new THREE.WebGLRenderer();
-			renderer.setSize( window.innerWidth, window.innerHeight );
-			document.body.appendChild( renderer.domElement );
 
+			var renderer = new THREE.WebGLRenderer();
 			var scene = new THREE.Scene();
 			var camera = new THREE.PerspectiveCamera( 100, window.innerWidth / window.innerHeight, 0.1, 1000 );
 			var controls = new THREE.OrbitControls(camera, renderer.domElement);
-			controls.addEventListener('change', render);
 
-			var geometry = new THREE.SphereBufferGeometry(10, 10, 10);
-			var amblight = new THREE.AmbientLight(0xffffff, 0.1);
-			var light = new THREE.DirectionalLight(0xffcc66, 1);
-			var material = new THREE.MeshLambertMaterial( { color: 0xff33cc } );
-			var planet = new THREE.Mesh( geometry, material );
-			scene.add( planet );
-			scene.add( amblight );
-			scene.add( light );
+			var moonTexture = new THREE.TextureLoader().load('textures/moon.jpg');
+			var planetGeometry = new THREE.SphereGeometry(10, 32, 32);
+			var planetMaterial = new THREE.MeshLambertMaterial( { map: moonTexture, overdraw: 0.5 } );
+			var planet = new THREE.Mesh( planetGeometry, planetMaterial );
+			var lightAmbient = new THREE.AmbientLight(0xffffff, 0.1);
+			var lightDirectional = new THREE.DirectionalLight(0xffffff, 1);
 
-			camera.position.z = 20;
-
-
+			init();
 			animate();
+
+
+			function init() {
+				renderer.setSize( window.innerWidth, window.innerHeight );
+				document.body.appendChild( renderer.domElement );
+
+				controls.addEventListener('change', render);
+				camera.position.z = 20;
+
+				geometries();
+				lights();
+			}
+
+			function geometries() {
+				scene.add( planet );
+			}
+
+			function lights() {
+				lightDirectional.position.set(-10, 0, 5);
+				scene.add( lightAmbient );
+				scene.add( lightDirectional );
+			}
 
 			function animate() {
 				requestAnimationFrame( animate );
-
 				planet.rotation.y += 0.01;
 
 				render();
