@@ -1,18 +1,11 @@
-# Fractals
-This repository contains fractals and mathematical phenomena I'm exploring.
-Currently, only the Mandelbrot drawing script is available to the public.
-Apologies.
+# Story and Canvas
+
+This project is an exploration of web graphics and design. Particular points of focus are user-centric experience, human interaction with- and interpretation of- art, as well as visually striking storytelling.
+
+This repository will be filled up in the next few months, as I expand my search for interesting ideas and concepts to implement. :>
 
 ----
-## Mandelbrot
-'''
-### Name: 
-Deniza Malataeva
-### Date: 
-January 29, 2015
-### Description: 
-The Mandelbrot Set fractal visual representation.
-The program draws a Mandelbrot Set fractal basing on the complex plane.
-Moreover, basing on how many iterations are made with the complex number, the fractal uses
-different colours to draw itself.
-'''
+## Current visualizations
+
+### Space Stone
+_WebGL (Javascript), HTML/SASS_
