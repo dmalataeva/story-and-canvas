@@ -15,3 +15,6 @@ _WebGL (Javascript), HTML/SASS_
 - Navigate into root of individual project
 - Run `go install` and subsequently `go build` to ensure your Go stuff is compiled
 - Run the compiled file (`./<name of project>`) and navigate to __locahost:8080_
+
+### Boulangerie
+_WebGL (Javascript), Blender, HTML/SASS_
