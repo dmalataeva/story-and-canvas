@@ -29,7 +29,7 @@ function initializeWindow() {
 
 function animate() {
     requestAnimationFrame(animate);
-    Moon.planet.rotation.y += 0.005;
+    Moon.planetMesh.rotation.y += 0.005;
 
     render();
 }
@@ -37,11 +37,11 @@ function animate() {
 function render() {
     let time = Date.now() * 0.005;
     Stars.particleSystem.rotation.z = 0.01 * time;
-    let sizes = Stars.stars.attributes.size.array;
-    for ( var i = 0; i < particles; i++ ) {
+    let sizes = Stars.particle.attributes.size.array;
+    for (let i = 0; i < Stars.particleCount; i++) {
         sizes[ i ] = 10 * ( 1 + Math.sin( 0.1 * i + time ) );
     }
-    Stars.stars.attributes.size.needsUpdate = true;
+    Stars.particle.attributes.size.needsUpdate = true;
 
     renderer.render(scene, camera);
 }

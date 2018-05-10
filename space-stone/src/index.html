@@ -9,7 +9,7 @@
 		</style>
 	</head>
 	<body>
-		<div id="text" style="position: absolute; color: #ffffff; margin: 45vh 50vw; font-size: 60px">Z  E  Q  I</div>
+		<div id="text" style="position: absolute; color: #ffffff; margin: 50vh 50vw; font-size: 60px; font-family: Inconsolata">SPACE STONE</div>
         <script src="js/three.js"></script>
         <script src="js/OrbitControls.js"></script>
         <script type="x-shader/x-vertex" id="vertexshader">
@@ -18,7 +18,7 @@
 			void main() {
 				vColor = color;
 				vec4 mvPosition = modelViewMatrix * vec4( position, 1.0 );
-				gl_PointSize = size * ( 300.0 / -mvPosition.z );
+				gl_PointSize = size * ( 50.0 / -mvPosition.z );
 				gl_Position = projectionMatrix * mvPosition;
 			}
 		</script>

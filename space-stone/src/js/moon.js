@@ -1,13 +1,17 @@
-let moonTexture = new THREE.TextureLoader().load('textures/moon.jpg');
+const Moon = function() {};
+
+let texture = new THREE.TextureLoader().load('textures/moon.jpg');
 let planetGeometry = new THREE.SphereGeometry(10, 100, 100);
 
 let planetMaterial = new THREE.MeshLambertMaterial({
-        map: moonTexture,
+        map: texture,
         overdraw: 0.5
     });
 
-let planet = new THREE.Mesh(planetGeometry, planetMaterial);
+Moon.planetMesh = new THREE.Mesh(planetGeometry, planetMaterial);
 
-function addToScene(scene) {
-    scene.add(planet);
-}
+Moon.addToScene = function (scene) {
+    scene.add(Moon.planetMesh);
+};
+
+module.exports = Moon;
