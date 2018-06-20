@@ -25,7 +25,8 @@
 
         <script type="x-shader/x-fragment" id="fragmentshader">
 			uniform sampler2D texture;
-			varying vec3 vColor;
+			//varying vec3 vSuppl;
+			vec3 vColor = vec3(2.55, 2.46, 0.81);
 			void main() {
 				gl_FragColor = vec4( vColor, 1.0 );
 				gl_FragColor = gl_FragColor * texture2D( texture, gl_PointCoord );
