@@ -14,7 +14,8 @@
         <script src="js/OrbitControls.js"></script>
         <script type="x-shader/x-vertex" id="vertexshader">
 			attribute float size;
-			varying vec3 vColor;
+			//varying vec3 vColor;
+			vec3 vColor = vec3(2.55, 2.52, 2.32);
 			void main() {
 				vColor = color;
 				vec4 mvPosition = modelViewMatrix * vec4( position, 1.0 );
@@ -25,8 +26,7 @@
 
         <script type="x-shader/x-fragment" id="fragmentshader">
 			uniform sampler2D texture;
-			//varying vec3 vSuppl;
-			vec3 vColor = vec3(2.55, 2.46, 0.81);
+			vec3 vColor = vec3(2.55, 2.52, 2.32);
 			void main() {
 				gl_FragColor = vec4( vColor, 1.0 );
 				gl_FragColor = gl_FragColor * texture2D( texture, gl_PointCoord );

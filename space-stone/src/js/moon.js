@@ -5,7 +5,9 @@ let planetGeometry = new THREE.SphereGeometry(10, 100, 100);
 
 let planetMaterial = new THREE.MeshLambertMaterial({
         map: texture,
-        overdraw: 0.5
+        overdraw: 1.0,
+        opacity: 1.0,
+        transparent: false
     });
 
 Moon.planetMesh = new THREE.Mesh(planetGeometry, planetMaterial);
