@@ -11,7 +11,7 @@ This repository will be filled up in the next few months, as I expand my search 
 _WebGL (Javascript), HTML/SASS_
 
 #### How to Run
-- Clone repo
+- Clone repository
 - Navigate into root of individual project
 - Run `go install` and subsequently `go build` to ensure your Go stuff is compiled
 - Run the compiled file (`./<name of project>`) and navigate to __locahost:8080_
