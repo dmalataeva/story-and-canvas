@@ -1,6 +1,7 @@
 const Moon = require('./moon.js');
 const Stars = require('./stars.js');
 const Lights = require('./lights.js');
+const Audio = require('./audio.js');
 
 let renderer = new THREE.WebGLRenderer();
 
@@ -12,6 +13,7 @@ let controls = new THREE.OrbitControls(camera, renderer.domElement);
 
 initializeWindow();
 animate();
+Audio.initialize();
 
 function initializeWindow() {
     renderer.setSize(window.innerWidth, window.innerHeight);

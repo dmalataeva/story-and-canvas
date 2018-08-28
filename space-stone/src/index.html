@@ -6,13 +6,31 @@
 		<style>
 			body {margin: 0;}
 			canvas {width: 100%; height: 100%}
+            #title {
+                position: absolute;
+                color: #ffffff;
+                margin: 50vh 50vw;
+                font-size: 60px;
+                font-family: 'Inconsolata'
+            }
+            .volume {
+                position: absolute;
+                color: #dedede;
+                margin: 5vh
+            }
 		</style>
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
 	</head>
-	<body>
-		<div id="text" style="position: absolute; color: #ffffff; margin: 50vh 50vw; font-size: 60px; font-family: Inconsolata">SPACE STONE</div>
+    <body>
+		<div id="title">SPACE STONE</div>
+        <i id="volume" class="fas fa-volume-up volume"></i>
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
         <script src="js/three.js"></script>
+        <script src="js/scripts.js" type="module"></script>
         <script src="js/OrbitControls.js"></script>
-        <script type="x-shader/x-vertex" id="vertexshader">
+
+		<script type="x-shader/x-vertex" id="vertexshader">
 			attribute float size;
 			//varying vec3 vColor;
 			vec3 vColor = vec3(2.55, 2.52, 2.32);
@@ -32,6 +50,12 @@
 				gl_FragColor = gl_FragColor * texture2D( texture, gl_PointCoord );
 			}
 		</script>
+
 		<script src="js/webgl-bundle.js"></script>
+
+        <!--<audio id="waterwalk">
+            <source src="Brevyn_-_10_-_Waterwalk.mp3" type="audio/mp3">
+            Your browser does not support the mp3 soundtrack.
+        </audio>-->
 	</body>
 </html>
