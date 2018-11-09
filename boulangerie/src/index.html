@@ -1,104 +1,26 @@
-<!DOCTYPE html>
-<html>
+
+	<html lang="en">
 	<head>
-		<meta charset=utf-8>
-		<title>My first three.js app</title>
+		<!-- Required meta tags -->
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+		<!-- Bootstrap CSS -->
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+		<title>Boulangerie</title>
 		<style>
 			body { margin: 0; }
 			canvas { width: 100%; height: 100% }
 		</style>
 	</head>
 	<body>
-		<script src="js/three.js"></script>
-		<script src="js/OrbitControls.js"></script>
-		<div id="text" style="position: absolute; color: #ffffff; margin: 45vh 50vw; font-size: 60px">Z  E  Q  I</div>
-		<script>
-
-			var renderer = new THREE.WebGLRenderer();
-			var scene = new THREE.Scene();
-			var camera = new THREE.PerspectiveCamera(100, window.innerWidth / window.innerHeight, 0.1, 1000);
-			var userControls = new THREE.OrbitControls(camera, renderer.domElement);
-
-			var loader = new THREE.ColladaLoader();
-			loader.options.convertUpAxis = true;
-			loader.load(
-				media.indoor_plant,
-				function(collada) {
-					var skin = collada.skins[0];
-					scene.add(collada.scene);
-				}
-				);
-			
-
-			var lightDirectional = new THREE.DirectionalLight(0xFFFFFF, 0.8);
-			lightDirectional.position.set(-15, 15, 15);
-			var lightAmbient = new THREE.AmbientLight(0xFFFFFF, 0.2);
-
-			scene.add(camera);
-			scene.add(lightDirectional);
-			scene.add(lightAmbient);
-			console.log("Hey! I'm working!");
-
-			animate();
-
-			function animate() {
-				requestAnimationFrame(animate);
-				render();
-			}
-
-			function render() {
-				renderer.render(scene, camera);
-			}
 
 
 
-			var renderer = new THREE.WebGLRenderer();
-			var scene = new THREE.Scene();
-			var camera = new THREE.PerspectiveCamera( 100, window.innerWidth / window.innerHeight, 0.1, 1000 );
-			var controls = new THREE.OrbitControls(camera, renderer.domElement);
-
-			var moonTexture = new THREE.TextureLoader().load('textures/moon.jpg');
-			var planetGeometry = new THREE.SphereGeometry(10, 32, 32);
-			var planetMaterial = new THREE.MeshLambertMaterial( { map: moonTexture, overdraw: 0.5 } );
-			var planet = new THREE.Mesh( planetGeometry, planetMaterial );
-			var lightAmbient = new THREE.AmbientLight(0xffffff, 0.1);
-			var lightDirectional = new THREE.DirectionalLight(0xffffff, 1);
-
-			init();
-			animate();
-
-
-			function init() {
-				renderer.setSize( window.innerWidth, window.innerHeight );
-				document.body.appendChild( renderer.domElement );
-
-				controls.addEventListener('change', render);
-				camera.position.z = 20;
-
-				geometries();
-				lights();
-			}
-
-			function geometries() {
-				scene.add( planet );
-			}
-
-			function lights() {
-				lightDirectional.position.set(-10, 0, 5);
-				scene.add( lightAmbient );
-				scene.add( lightDirectional );
-			}
-
-			function animate() {
-				requestAnimationFrame( animate );
-				planet.rotation.y += 0.01;
-
-				render();
-			}
-
-			function render() {
-				renderer.render(scene, camera);
-			}
-		</script>
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
 	</body>
+	</html>
 </html>

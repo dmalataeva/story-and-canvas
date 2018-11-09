@@ -18,7 +18,7 @@ func main() {
 }
 
 func Start() {
-	canvas := http.FileServer(http.Dir("src"))
-	http.Handle("/", canvas)
+	site := http.FileServer(http.Dir("src"))
+	http.Handle("/", site)
 	http.ListenAndServe(":8080", nil)
 }
