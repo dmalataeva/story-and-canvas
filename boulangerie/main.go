@@ -8,7 +8,6 @@ import (
 func main() {
 	fmt.Printf("\n")
 	fmt.Printf("--------------------------------------------------\n")
-	fmt.Printf("This simple HTTP Server was built specifically for\n")
 	fmt.Printf("----  github.com/dmalataeva/story-and-canvas  ----\n")
 	fmt.Printf("--------------------------------------------------\n")
 	fmt.Printf("\n")
@@ -18,7 +17,7 @@ func main() {
 }
 
 func Start() {
-	site := http.FileServer(http.Dir("src"))
-	http.Handle("/", site)
+	canvas := http.FileServer(http.Dir("src"))
+	http.Handle("/", canvas)
 	http.ListenAndServe(":8080", nil)
 }
