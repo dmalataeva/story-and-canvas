@@ -1,0 +1,9 @@
+version: '3.3'
+services:
+  server:
+    container_name: server
+    build: .
+    ports:
+      - "8680:8680"
+    volumes:
+      - ./:/story-and-canvas

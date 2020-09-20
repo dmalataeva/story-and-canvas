@@ -1,0 +1,24 @@
+{
+  "name": "story-and-canvas",
+  "version": "1.0.0",
+  "description": "An exploration of web graphics through storytelling",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dmalataeva/story-and-canvas.git"
+  },
+  "author": "@dmalataeva",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dmalataeva/story-and-canvas/issues"
+  },
+  "homepage": "https://github.com/dmalataeva/story-and-canvas#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "http": "0.0.1-security",
+    "path": "^0.12.7"
+  }
+}
