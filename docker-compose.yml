@@ -1,5 +1,9 @@
 version: '3.3'
 services:
   server:
-    image: node:14-alpine
-    
+    container_name: server
+    build: .
+    ports:
+      - "8680:8680"
+    volumes:
+      - ./:/story-and-canvas
